@@ -16,23 +16,27 @@
         function classify(){
         var kWh = document.getElementById("Classify").value;
         let cat1 = "Lifeline Consumer";
-            //comment
+            //for letters and negative numbers
             if (isNaN(kWh) || kWh < 0){
                 alert("Please input a valid number.");
         }
-
+            //Discounted Rate -- 0 - 100
             else if((kWh<101) && (kWh>0)){
             alert(cat1 + ": You have a discounted rate.");
             }
+            //Discounted Rate -- 101 - 200
             else if(((kWh<201) && (kWh>100))){
             alert(cat1 + ": You have a Normal Residential rate.");
             }
+            //Discounted Rate -- 201 - 300
             else if(((kWh<301) && (kWh>200))){
             alert(cat1 + ": You have Typical Electricity usage.");
             }
+            //Discounted Rate -- 301 - 500
             else if((kWh<501) && (kWh>300)){
                 alert(cat1 + ": You are a Higher Electricity usage.");
             }
+            //Discounted Rate -- 500 above
             else{
                 alert(cat1 + ": You are a Heavy Electricity user")
             }
